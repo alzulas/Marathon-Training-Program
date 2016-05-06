@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		920FF1C91CD5B54400799BC3 /* 262_female_shld in Resources */ = {isa = PBXBuildFile; fileRef = 920FF1C81CD5B54400799BC3 /* 262_female_shld */; };
+		92D2182E1CD5D1AC0099670F /* blueSquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D2182D1CD5D1AC0099670F /* blueSquare.png */; };
+		92D218301CD72AB20099670F /* AdvancedProgram.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D2182F1CD72AB20099670F /* AdvancedProgram.png */; };
+		92D218321CD72AC10099670F /* IntermediateProgram.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D218311CD72AC10099670F /* IntermediateProgram.png */; };
+		92D218341CD72AD20099670F /* NoviceProgram.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D218331CD72AD20099670F /* NoviceProgram.png */; };
+		92E701C11CD99140005DBF64 /* pickLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E701C01CD99140005DBF64 /* pickLevelViewController.m */; };
+		92E701C41CD9921F005DBF64 /* TrainingProgramExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E701C31CD9921F005DBF64 /* TrainingProgramExampleViewController.m */; };
+		92F7C7A71CD3209A002ECD78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F7C7A61CD3209A002ECD78 /* main.m */; };
+		92F7C7AA1CD3209A002ECD78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F7C7A91CD3209A002ECD78 /* AppDelegate.m */; };
+		92F7C7AD1CD3209A002ECD78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F7C7AC1CD3209A002ECD78 /* ViewController.m */; };
+		92F7C7B01CD3209A002ECD78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F7C7AE1CD3209A002ECD78 /* Main.storyboard */; };
+		92F7C7B31CD3209A002ECD78 /* Marathon_Training_Program.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92F7C7B11CD3209A002ECD78 /* Marathon_Training_Program.xcdatamodeld */; };
+		92F7C7B51CD3209A002ECD78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F7C7B41CD3209A002ECD78 /* Assets.xcassets */; };
+		92F7C7B81CD3209A002ECD78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F7C7B61CD3209A002ECD78 /* LaunchScreen.storyboard */; };
+		92F7C7C31CD3209A002ECD78 /* Marathon_Training_ProgramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F7C7C21CD3209A002ECD78 /* Marathon_Training_ProgramTests.m */; };
+		92F7C7CE1CD3209B002ECD78 /* Marathon_Training_ProgramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F7C7CD1CD3209B002ECD78 /* Marathon_Training_ProgramUITests.m */; };
+		92F7C7DC1CD321D9002ECD78 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F7C7DB1CD321D9002ECD78 /* EventKit.framework */; };
+		92F7C7DE1CD321EA002ECD78 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F7C7DD1CD321EA002ECD78 /* EventKitUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92F7C7BF1CD3209A002ECD78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92F7C79A1CD3209A002ECD78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92F7C7A11CD3209A002ECD78;
+			remoteInfo = "Marathon Training Program";
+		};
+		92F7C7CA1CD3209B002ECD78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92F7C79A1CD3209A002ECD78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92F7C7A11CD3209A002ECD78;
+			remoteInfo = "Marathon Training Program";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		920FF1C81CD5B54400799BC3 /* 262_female_shld */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 262_female_shld; path = ../../../../Downloads/262_female_shld; sourceTree = "<group>"; };
+		92D2182D1CD5D1AC0099670F /* blueSquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueSquare.png; path = ../../../../Desktop/blueSquare.png; sourceTree = "<group>"; };
+		92D2182F1CD72AB20099670F /* AdvancedProgram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdvancedProgram.png; path = ../../../../Desktop/AdvancedProgram.png; sourceTree = "<group>"; };
+		92D218311CD72AC10099670F /* IntermediateProgram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IntermediateProgram.png; path = ../../../../Desktop/IntermediateProgram.png; sourceTree = "<group>"; };
+		92D218331CD72AD20099670F /* NoviceProgram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NoviceProgram.png; path = ../../../../Desktop/NoviceProgram.png; sourceTree = "<group>"; };
+		92E701BF1CD99140005DBF64 /* pickLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pickLevelViewController.h; sourceTree = "<group>"; };
+		92E701C01CD99140005DBF64 /* pickLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pickLevelViewController.m; sourceTree = "<group>"; };
+		92E701C21CD9921F005DBF64 /* TrainingProgramExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingProgramExampleViewController.h; sourceTree = "<group>"; };
+		92E701C31CD9921F005DBF64 /* TrainingProgramExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingProgramExampleViewController.m; sourceTree = "<group>"; };
+		92F7C7A21CD3209A002ECD78 /* Marathon Training Program.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marathon Training Program.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F7C7A61CD3209A002ECD78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92F7C7A81CD3209A002ECD78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		92F7C7A91CD3209A002ECD78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		92F7C7AB1CD3209A002ECD78 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		92F7C7AC1CD3209A002ECD78 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		92F7C7AF1CD3209A002ECD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92F7C7B21CD3209A002ECD78 /* Marathon_Training_Program.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Marathon_Training_Program.xcdatamodel; sourceTree = "<group>"; };
+		92F7C7B41CD3209A002ECD78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92F7C7B71CD3209A002ECD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92F7C7B91CD3209A002ECD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F7C7BE1CD3209A002ECD78 /* Marathon Training ProgramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marathon Training ProgramTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F7C7C21CD3209A002ECD78 /* Marathon_Training_ProgramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Marathon_Training_ProgramTests.m; sourceTree = "<group>"; };
+		92F7C7C41CD3209A002ECD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F7C7C91CD3209B002ECD78 /* Marathon Training ProgramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marathon Training ProgramUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F7C7CD1CD3209B002ECD78 /* Marathon_Training_ProgramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Marathon_Training_ProgramUITests.m; sourceTree = "<group>"; };
+		92F7C7CF1CD3209B002ECD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F7C7DB1CD321D9002ECD78 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		92F7C7DD1CD321EA002ECD78 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92F7C79F1CD3209A002ECD78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F7C7DE1CD321EA002ECD78 /* EventKitUI.framework in Frameworks */,
+				92F7C7DC1CD321D9002ECD78 /* EventKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F7C7BB1CD3209A002ECD78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F7C7C61CD3209B002ECD78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92F7C7991CD3209A002ECD78 = {
+			isa = PBXGroup;
+			children = (
+				92F7C7DD1CD321EA002ECD78 /* EventKitUI.framework */,
+				92F7C7DB1CD321D9002ECD78 /* EventKit.framework */,
+				92F7C7A41CD3209A002ECD78 /* Marathon Training Program */,
+				92F7C7C11CD3209A002ECD78 /* Marathon Training ProgramTests */,
+				92F7C7CC1CD3209B002ECD78 /* Marathon Training ProgramUITests */,
+				92F7C7A31CD3209A002ECD78 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92F7C7A31CD3209A002ECD78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92F7C7A21CD3209A002ECD78 /* Marathon Training Program.app */,
+				92F7C7BE1CD3209A002ECD78 /* Marathon Training ProgramTests.xctest */,
+				92F7C7C91CD3209B002ECD78 /* Marathon Training ProgramUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92F7C7A41CD3209A002ECD78 /* Marathon Training Program */ = {
+			isa = PBXGroup;
+			children = (
+				92F7C7A81CD3209A002ECD78 /* AppDelegate.h */,
+				92F7C7A91CD3209A002ECD78 /* AppDelegate.m */,
+				92F7C7AB1CD3209A002ECD78 /* ViewController.h */,
+				92F7C7AC1CD3209A002ECD78 /* ViewController.m */,
+				92F7C7AE1CD3209A002ECD78 /* Main.storyboard */,
+				92E701C21CD9921F005DBF64 /* TrainingProgramExampleViewController.h */,
+				92E701C31CD9921F005DBF64 /* TrainingProgramExampleViewController.m */,
+				92E701BF1CD99140005DBF64 /* pickLevelViewController.h */,
+				92E701C01CD99140005DBF64 /* pickLevelViewController.m */,
+				92F7C7B41CD3209A002ECD78 /* Assets.xcassets */,
+				920FF1C81CD5B54400799BC3 /* 262_female_shld */,
+				92F7C7B61CD3209A002ECD78 /* LaunchScreen.storyboard */,
+				92D2182F1CD72AB20099670F /* AdvancedProgram.png */,
+				92D218311CD72AC10099670F /* IntermediateProgram.png */,
+				92D218331CD72AD20099670F /* NoviceProgram.png */,
+				92D2182D1CD5D1AC0099670F /* blueSquare.png */,
+				92F7C7B91CD3209A002ECD78 /* Info.plist */,
+				92F7C7B11CD3209A002ECD78 /* Marathon_Training_Program.xcdatamodeld */,
+				92F7C7A51CD3209A002ECD78 /* Supporting Files */,
+			);
+			path = "Marathon Training Program";
+			sourceTree = "<group>";
+		};
+		92F7C7A51CD3209A002ECD78 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92F7C7A61CD3209A002ECD78 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92F7C7C11CD3209A002ECD78 /* Marathon Training ProgramTests */ = {
+			isa = PBXGroup;
+			children = (
+				92F7C7C21CD3209A002ECD78 /* Marathon_Training_ProgramTests.m */,
+				92F7C7C41CD3209A002ECD78 /* Info.plist */,
+			);
+			path = "Marathon Training ProgramTests";
+			sourceTree = "<group>";
+		};
+		92F7C7CC1CD3209B002ECD78 /* Marathon Training ProgramUITests */ = {
+			isa = PBXGroup;
+			children = (
+				92F7C7CD1CD3209B002ECD78 /* Marathon_Training_ProgramUITests.m */,
+				92F7C7CF1CD3209B002ECD78 /* Info.plist */,
+			);
+			path = "Marathon Training ProgramUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92F7C7A11CD3209A002ECD78 /* Marathon Training Program */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92F7C7D21CD3209B002ECD78 /* Build configuration list for PBXNativeTarget "Marathon Training Program" */;
+			buildPhases = (
+				92F7C79E1CD3209A002ECD78 /* Sources */,
+				92F7C79F1CD3209A002ECD78 /* Frameworks */,
+				92F7C7A01CD3209A002ECD78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Marathon Training Program";
+			productName = "Marathon Training Program";
+			productReference = 92F7C7A21CD3209A002ECD78 /* Marathon Training Program.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92F7C7BD1CD3209A002ECD78 /* Marathon Training ProgramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92F7C7D51CD3209B002ECD78 /* Build configuration list for PBXNativeTarget "Marathon Training ProgramTests" */;
+			buildPhases = (
+				92F7C7BA1CD3209A002ECD78 /* Sources */,
+				92F7C7BB1CD3209A002ECD78 /* Frameworks */,
+				92F7C7BC1CD3209A002ECD78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92F7C7C01CD3209A002ECD78 /* PBXTargetDependency */,
+			);
+			name = "Marathon Training ProgramTests";
+			productName = "Marathon Training ProgramTests";
+			productReference = 92F7C7BE1CD3209A002ECD78 /* Marathon Training ProgramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92F7C7C81CD3209B002ECD78 /* Marathon Training ProgramUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92F7C7D81CD3209B002ECD78 /* Build configuration list for PBXNativeTarget "Marathon Training ProgramUITests" */;
+			buildPhases = (
+				92F7C7C51CD3209B002ECD78 /* Sources */,
+				92F7C7C61CD3209B002ECD78 /* Frameworks */,
+				92F7C7C71CD3209B002ECD78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92F7C7CB1CD3209B002ECD78 /* PBXTargetDependency */,
+			);
+			name = "Marathon Training ProgramUITests";
+			productName = "Marathon Training ProgramUITests";
+			productReference = 92F7C7C91CD3209B002ECD78 /* Marathon Training ProgramUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92F7C79A1CD3209A002ECD78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Leah Zulas";
+				TargetAttributes = {
+					92F7C7A11CD3209A002ECD78 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = UBUKE896W7;
+					};
+					92F7C7BD1CD3209A002ECD78 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = UBUKE896W7;
+						TestTargetID = 92F7C7A11CD3209A002ECD78;
+					};
+					92F7C7C81CD3209B002ECD78 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = UBUKE896W7;
+						TestTargetID = 92F7C7A11CD3209A002ECD78;
+					};
+				};
+			};
+			buildConfigurationList = 92F7C79D1CD3209A002ECD78 /* Build configuration list for PBXProject "Marathon Training Program" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92F7C7991CD3209A002ECD78;
+			productRefGroup = 92F7C7A31CD3209A002ECD78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92F7C7A11CD3209A002ECD78 /* Marathon Training Program */,
+				92F7C7BD1CD3209A002ECD78 /* Marathon Training ProgramTests */,
+				92F7C7C81CD3209B002ECD78 /* Marathon Training ProgramUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92F7C7A01CD3209A002ECD78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D218341CD72AD20099670F /* NoviceProgram.png in Resources */,
+				92D218321CD72AC10099670F /* IntermediateProgram.png in Resources */,
+				920FF1C91CD5B54400799BC3 /* 262_female_shld in Resources */,
+				92F7C7B81CD3209A002ECD78 /* LaunchScreen.storyboard in Resources */,
+				92D218301CD72AB20099670F /* AdvancedProgram.png in Resources */,
+				92F7C7B51CD3209A002ECD78 /* Assets.xcassets in Resources */,
+				92F7C7B01CD3209A002ECD78 /* Main.storyboard in Resources */,
+				92D2182E1CD5D1AC0099670F /* blueSquare.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F7C7BC1CD3209A002ECD78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F7C7C71CD3209B002ECD78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92F7C79E1CD3209A002ECD78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92E701C11CD99140005DBF64 /* pickLevelViewController.m in Sources */,
+				92F7C7AD1CD3209A002ECD78 /* ViewController.m in Sources */,
+				92E701C41CD9921F005DBF64 /* TrainingProgramExampleViewController.m in Sources */,
+				92F7C7AA1CD3209A002ECD78 /* AppDelegate.m in Sources */,
+				92F7C7B31CD3209A002ECD78 /* Marathon_Training_Program.xcdatamodeld in Sources */,
+				92F7C7A71CD3209A002ECD78 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F7C7BA1CD3209A002ECD78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F7C7C31CD3209A002ECD78 /* Marathon_Training_ProgramTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F7C7C51CD3209B002ECD78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F7C7CE1CD3209B002ECD78 /* Marathon_Training_ProgramUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92F7C7C01CD3209A002ECD78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92F7C7A11CD3209A002ECD78 /* Marathon Training Program */;
+			targetProxy = 92F7C7BF1CD3209A002ECD78 /* PBXContainerItemProxy */;
+		};
+		92F7C7CB1CD3209B002ECD78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92F7C7A11CD3209A002ECD78 /* Marathon Training Program */;
+			targetProxy = 92F7C7CA1CD3209B002ECD78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92F7C7AE1CD3209A002ECD78 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92F7C7AF1CD3209A002ECD78 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		92F7C7B61CD3209A002ECD78 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92F7C7B71CD3209A002ECD78 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92F7C7D01CD3209B002ECD78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		92F7C7D11CD3209B002ECD78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92F7C7D31CD3209B002ECD78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Marathon Training Program/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ALZulas.Marathon-Training-Program";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92F7C7D41CD3209B002ECD78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Marathon Training Program/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ALZulas.Marathon-Training-Program";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		92F7C7D61CD3209B002ECD78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Marathon Training ProgramTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ALZulas.Marathon-Training-ProgramTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marathon Training Program.app/Marathon Training Program";
+			};
+			name = Debug;
+		};
+		92F7C7D71CD3209B002ECD78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Marathon Training ProgramTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ALZulas.Marathon-Training-ProgramTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marathon Training Program.app/Marathon Training Program";
+			};
+			name = Release;
+		};
+		92F7C7D91CD3209B002ECD78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Marathon Training ProgramUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ALZulas.Marathon-Training-ProgramUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Marathon Training Program";
+			};
+			name = Debug;
+		};
+		92F7C7DA1CD3209B002ECD78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Marathon Training ProgramUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ALZulas.Marathon-Training-ProgramUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Marathon Training Program";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92F7C79D1CD3209A002ECD78 /* Build configuration list for PBXProject "Marathon Training Program" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92F7C7D01CD3209B002ECD78 /* Debug */,
+				92F7C7D11CD3209B002ECD78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92F7C7D21CD3209B002ECD78 /* Build configuration list for PBXNativeTarget "Marathon Training Program" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92F7C7D31CD3209B002ECD78 /* Debug */,
+				92F7C7D41CD3209B002ECD78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92F7C7D51CD3209B002ECD78 /* Build configuration list for PBXNativeTarget "Marathon Training ProgramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92F7C7D61CD3209B002ECD78 /* Debug */,
+				92F7C7D71CD3209B002ECD78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92F7C7D81CD3209B002ECD78 /* Build configuration list for PBXNativeTarget "Marathon Training ProgramUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92F7C7D91CD3209B002ECD78 /* Debug */,
+				92F7C7DA1CD3209B002ECD78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92F7C7B11CD3209A002ECD78 /* Marathon_Training_Program.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92F7C7B21CD3209A002ECD78 /* Marathon_Training_Program.xcdatamodel */,
+			);
+			currentVersion = 92F7C7B21CD3209A002ECD78 /* Marathon_Training_Program.xcdatamodel */;
+			path = Marathon_Training_Program.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 92F7C79A1CD3209A002ECD78 /* Project object */;
+}
