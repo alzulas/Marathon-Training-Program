@@ -48,6 +48,9 @@
     NSLog(@"I started properly");
    //NSMutableArray* weekdays[7];
     _weekdays = 0;
+    if(_levelAccepted == [NSNumber numberWithInt:3]){
+        _midweekLabel.text = @"Pick 4 days of the week for your midweek runs";
+    }
     
     //BOOL weekbools[7];
     //BOOL[7] weekbools;
@@ -69,6 +72,57 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(int)nextDatePickedByButtons{
+    int midWeek = 0;
+    if(_midWeekSundayClickedBool){
+        midWeek = 0;
+        _midWeekSundayClickedBool = false;
+    }else if (_midWeekMondayClickedBool){
+        midWeek = 1;
+        _midWeekMondayClickedBool = false;
+    }else if (_midWeekTuesdayClickedBool){
+        midWeek = 2;
+        _midWeekTuesdayClickedBool = false;
+    }else if (_midWeekWednesdayClickedBool){
+        midWeek = 3;
+        _midWeekWednesdayClickedBool = false;
+    }else if (_midWeekThursdayClickedBool){
+        midWeek = 4;
+        _midWeekThursdayClickedBool = false;
+    }else if (_midWeekFridayClickedBool){
+        midWeek = 5;
+        _midWeekFridayClickedBool = false;
+    }else if (_midWeekSaturdayClickedBool){
+        midWeek = 6;
+        _midWeekSaturdayClickedBool = false;
+    }
+    return midWeek;
+}
+
+-(NSDate*)findFirstDayFromMarathon: (long) weekdayOfSegment{
+    NSDateComponents *comps = [_datePicker.calendar components:NSCalendarUnitWeekday fromDate:_datePicker.date]; //we need to figure out what day the date picker picked. When is the marathon
+    int weekdayOfMarathon = [comps weekday];
+    NSLog(@"day of marathon %d", weekdayOfMarathon);
+    NSLog(@"day of picker %ld", weekdayOfSegment);
+    NSDate* firstDay = [[NSDate alloc] init];
+    
+    NSTimeInterval secondsPerWeek = (7 * 24 * 60 * 60)-60;
+    NSTimeInterval secondsPerDay = 24 * 60 * 60;
+    
+    if(weekdayOfMarathon == weekdayOfSegment+1){ //So if it is the marathon day, when.
+        firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsPerWeek];
+    }else if (weekdayOfMarathon > weekdayOfSegment+1){ //If the next one is to the right in a 7 day week
+        NSTimeInterval secondsBeforeMarathon = (secondsPerDay * (weekdayOfMarathon-(weekdayOfSegment+1)));
+        firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsBeforeMarathon];
+    }else{//to the left in a 7 day week
+        NSTimeInterval secondsAfterMarathon = secondsPerWeek - (secondsPerDay * ((weekdayOfSegment+1) - weekdayOfMarathon));
+        firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsAfterMarathon];
+    }
+
+    return firstDay;
+}
+
 
 - (IBAction)sendToCalendar:(UIButton *)sender {
     EKEventStore *eventstore = [[EKEventStore alloc] init];
@@ -139,7 +193,43 @@
                  NSArray* descriptionMidWeekRun3Advanced = [NSArray arrayWithObjects:@"Run 2 miles today steady", @"Run 4 miles at steady pace", @"Run 5 miles at steady pace", @"Run 5 miles at steady pace", @"Run 5 miles at steady pace", @"Run 5 miles at steady pace", @"Run 5 miles at steady pace", @"Run 5 miles at steady pace", @"Run 4 miles at steady pace", @"Run 4 miles at steady pace", @"Run 4 miles at steady pace", @"Run 4 miles at steady pace", @"Run 3 miles at steady pace", @"Run 3 miles at steady pace", @"Run 3 miles at steady pace", @"Run 3 miles at steady pace", @"Run 3 miles at steady pace", @"Run 3 miles at steady pace", nil];
                  NSArray* descriptionMidWeekRun4Advanced = [NSArray arrayWithObjects:@"Take a break today and rest. No working out today!", @"30 minute tempo run", @"Run 6 x hill intervals", @"Run 8 x 800 intervals", @"45 minute tempo run", @"Run 7 x hill intervals", @"Run 7 x 800 intervals", @"45 minute tempo run", @"Run 6 x hill intervals", @"Run 6 x 800 intervals", @"40 minute tempo run", @"Run 5 x hill intervals", @"Run 5 x 800 intervals", @"35 minute tempo run", @"Run 4 x hill intervals", @"Run 4 x 800 intervals", @"30 minute tempo run", @"Run 3 x hill intervals", nil];
                  
+                 //Need to set up which level of runs you selected, so that it fills the correct information in for the level you picked. Filling the arrays that vary with the arrays of information that is set.
+                 if (_levelAccepted == [NSNumber numberWithInt:1]) {
+                     longRuns = longRunsNovice;
+                     midLongRuns = midLongRunsNovice;
+                     midWeekRun1 = midWeekRun1Novice;
+                     midWeekRun2 = midWeekRun2Novice;
+                     midWeekRun3 = midWeekRun3Novice;
+                     descriptionLongRun = descriptionLongRunNovice;
+                     descriptionMidLongRuns = descriptionMidLongRunsNovice;
+                     descriptionMidWeekRun1 = descriptionMidWeekRun1Novice;
+                     descriptionMidWeekRun2 = descriptionMidWeekRun2Novice;
+                     descriptionMidWeekRun3 = descriptionMidWeekRun3Novice;
+                 }else if (_levelAccepted == [NSNumber numberWithInt:2]){
+                     longRuns = longRunsIntermediate;
+                     midLongRuns = midLongRunsIntermediate;
+                     midWeekRun1 = midWeekRun1Intermediate;
+                     midWeekRun2 = midWeekRun2Intermediate;
+                     midWeekRun3 = midWeekRun3Intermediate;
+                     descriptionLongRun = descriptionLongRunIntermediate;
+                     descriptionMidLongRuns = descriptionMidLongRunsIntermediate;
+                     descriptionMidWeekRun1 = descriptionMidWeekRun1Intermediate;
+                     descriptionMidWeekRun2 = descriptionMidWeekRun2Intermediate;
+                     descriptionMidWeekRun3 = descriptionMidWeekRun3Intermediate;
+                 }else if (_levelAccepted == [NSNumber numberWithInt:3]){
+                     longRuns = longRunsAdvanced;
+                     midLongRuns = midLongRunsAdvanced;
+                     midWeekRun1 = midWeekRun1Advanced;
+                     midWeekRun2 = midWeekRun2Advanced;
+                     midWeekRun3 = midWeekRun3Advanced;
+                     descriptionLongRun = descriptionLongRunAdvanced;
+                     descriptionMidLongRuns = descriptionMidLongRunsAdvanced;
+                     descriptionMidWeekRun1 = descriptionMidWeekRun1Advanced;
+                     descriptionMidWeekRun2 = descriptionMidWeekRun2Advanced;
+                     descriptionMidWeekRun3 = descriptionMidWeekRun3Advanced;
+                 }
                  
+                 //checking to make sure that none of the days from the days are matching. You don't want long runs and midlong runs on the same day. That would suck.
                  if((_midWeekSundayClickedBool && _longRunPicker.selectedSegmentIndex == 0) || (_midWeekSundayClickedBool && _mediumRunPicker.selectedSegmentIndex == 0)){
                      _matchingDays = true;
                  }else if((_midWeekMondayClickedBool && _longRunPicker.selectedSegmentIndex == 1) || (_midWeekMondayClickedBool && _mediumRunPicker.selectedSegmentIndex == 1)){
@@ -159,65 +249,22 @@
                      _matchingDays = false;
                  }
                  
+                 //So, now, so long as you have 3 week day run times picked, or four if you're advanced
                  if(_weekdays ==3 || (_weekdays == 4 && _levelAccepted == [NSNumber numberWithInt:3])){
-                     if(!(_longRunPicker.selectedSegmentIndex==_mediumRunPicker.selectedSegmentIndex) && !(_matchingDays)){
+                     if(!(_longRunPicker.selectedSegmentIndex==_mediumRunPicker.selectedSegmentIndex) && !(_matchingDays)){//And you don't have any overlapping days
                          NSString* thisRun;
                          int i = 0;
-                         //NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-                         //[dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-                         NSDateComponents *comps = [_datePicker.calendar components:NSCalendarUnitWeekday fromDate:_datePicker.date];
+                         
+                         NSDateComponents *comps = [_datePicker.calendar components:NSCalendarUnitWeekday fromDate:_datePicker.date]; //we need to figure out what day the date picker picked. When is the marathon
                          int weekdayOfMarathon = [comps weekday];
                          NSLog(@"%d", weekdayOfMarathon);
                          NSLog(@"%ld", _longRunPicker.selectedSegmentIndex);
                          NSDate* firstDay = [[NSDate alloc] init];
-                         if(weekdayOfMarathon == _longRunPicker.selectedSegmentIndex+1){
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsPerWeek];
-                         }else if (weekdayOfMarathon > _longRunPicker.selectedSegmentIndex+1){
-                             NSTimeInterval secondsBeforeMarathon = (secondsPerDay * (weekdayOfMarathon-(_longRunPicker.selectedSegmentIndex+1)));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsBeforeMarathon];
-                         }else{
-                             NSTimeInterval secondsAfterMarathon = secondsPerWeek - (secondsPerDay * ((_longRunPicker.selectedSegmentIndex+1) - weekdayOfMarathon));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsAfterMarathon];
-                         }
-                         
+                         //Then you need to calculate when the first, whatever day of the week you picked for your long run is, so you can start posting to the calendar from that date.
 
+                         firstDay = [self findFirstDayFromMarathon:_longRunPicker.selectedSegmentIndex];
                          
-                         //NSDate *firstDay = _datePicker.date; //[dateFormat dateFromString:@"2016-04-29 11:59:00"];
-                         if (_levelAccepted == [NSNumber numberWithInt:1]) {
-                             longRuns = longRunsNovice;
-                             midLongRuns = midLongRunsNovice;
-                             midWeekRun1 = midWeekRun1Novice;
-                             midWeekRun2 = midWeekRun2Novice;
-                             midWeekRun3 = midWeekRun3Novice;
-                             descriptionLongRun = descriptionLongRunNovice;
-                             descriptionMidLongRuns = descriptionMidLongRunsNovice;
-                             descriptionMidWeekRun1 = descriptionMidWeekRun1Novice;
-                             descriptionMidWeekRun2 = descriptionMidWeekRun2Novice;
-                             descriptionMidWeekRun3 = descriptionMidWeekRun3Novice;
-                         }else if (_levelAccepted == [NSNumber numberWithInt:2]){
-                             longRuns = longRunsIntermediate;
-                             midLongRuns = midLongRunsIntermediate;
-                             midWeekRun1 = midWeekRun1Intermediate;
-                             midWeekRun2 = midWeekRun2Intermediate;
-                             midWeekRun3 = midWeekRun3Intermediate;
-                             descriptionLongRun = descriptionLongRunIntermediate;
-                             descriptionMidLongRuns = descriptionMidLongRunsIntermediate;
-                             descriptionMidWeekRun1 = descriptionMidWeekRun1Intermediate;
-                             descriptionMidWeekRun2 = descriptionMidWeekRun2Intermediate;
-                             descriptionMidWeekRun3 = descriptionMidWeekRun3Intermediate;
-                         }else if (_levelAccepted == [NSNumber numberWithInt:3]){
-                             longRuns = longRunsAdvanced;
-                             midLongRuns = midLongRunsAdvanced;
-                             midWeekRun1 = midWeekRun1Advanced;
-                             midWeekRun2 = midWeekRun2Advanced;
-                             midWeekRun3 = midWeekRun3Advanced;
-                             descriptionLongRun = descriptionLongRunAdvanced;
-                             descriptionMidLongRuns = descriptionMidLongRunsAdvanced;
-                             descriptionMidWeekRun1 = descriptionMidWeekRun1Advanced;
-                             descriptionMidWeekRun2 = descriptionMidWeekRun2Advanced;
-                             descriptionMidWeekRun3 = descriptionMidWeekRun3Advanced;
-                         }
-                         
+                         //filling in the calendar with the information for the long runs. This is the part that actually does the posting.
                          for (thisRun in longRuns)
                          {
                              EKEvent *event  = [EKEvent eventWithEventStore: eventstore];
@@ -238,19 +285,15 @@
                              //[firstDay release];
                              firstDay = newDate;
                          }
+                         
+                         //Now, to do it all again. But for the medium long run.
+                         
+                         //figuring out what day to start on coming from marathon day.
                          i = 0;
-                         NSLog(@"%ld", _mediumRunPicker.selectedSegmentIndex);
-                         if(weekdayOfMarathon == _mediumRunPicker.selectedSegmentIndex+1){
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsPerWeek];
-                         }else if (weekdayOfMarathon > _mediumRunPicker.selectedSegmentIndex+1){
-                             NSTimeInterval secondsBeforeMarathon = (secondsPerDay * (weekdayOfMarathon-(_mediumRunPicker.selectedSegmentIndex+1)));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsBeforeMarathon];
-                         }else{
-                             NSTimeInterval secondsAfterMarathon = secondsPerWeek - (secondsPerDay * ((_mediumRunPicker.selectedSegmentIndex+1) - weekdayOfMarathon));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsAfterMarathon];
-                         }
+
+                         firstDay = [self findFirstDayFromMarathon:_mediumRunPicker.selectedSegmentIndex];
                          
-                         
+                         //posting to the calendar
                          for (thisRun in midLongRuns)
                          {
                              EKEvent *event  = [EKEvent eventWithEventStore: eventstore];
@@ -272,45 +315,16 @@
                              firstDay = newDate;
                          }
                          
+                         
+                         //This part takes the weird set of buttons that look like a segmented control and finds the next button selected from left to right so we know what day of the week we care about.
                          int firstMidWeek = 0;
+                         firstMidWeek = [self nextDatePickedByButtons];
+                         firstDay = [self findFirstDayFromMarathon:firstMidWeek];
                          
-                         if(_midWeekSundayClickedBool){
-                             firstMidWeek = 0;
-                             _midWeekSundayClickedBool = false;
-                         }else if (_midWeekMondayClickedBool){
-                             firstMidWeek = 1;
-                            _midWeekMondayClickedBool = false;
-                         }else if (_midWeekTuesdayClickedBool){
-                             firstMidWeek = 2;
-                            _midWeekTuesdayClickedBool = false;
-                         }else if (_midWeekWednesdayClickedBool){
-                             firstMidWeek = 3;
-                            _midWeekWednesdayClickedBool = false;
-                         }else if (_midWeekThursdayClickedBool){
-                             firstMidWeek = 4;
-                            _midWeekThursdayClickedBool = false;
-                         }else if (_midWeekFridayClickedBool){
-                             firstMidWeek = 5;
-                             _midWeekFridayClickedBool = false;
-                         }else if (_midWeekSaturdayClickedBool){
-                             firstMidWeek = 6;
-                             _midWeekSaturdayClickedBool = false;
-                         }
-                         
+                         //figuring out what day to start on coming from marathon day.
                          i = 0;
-                         NSLog(@"%d", firstMidWeek);
-                         if(weekdayOfMarathon == firstMidWeek+1){
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsPerWeek];
-                         }else if (weekdayOfMarathon > firstMidWeek+1){
-                             NSTimeInterval secondsBeforeMarathon = (secondsPerDay * (weekdayOfMarathon-(firstMidWeek+1)));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsBeforeMarathon];
-                         }else{
-                             NSTimeInterval secondsAfterMarathon = secondsPerWeek - (secondsPerDay * ((firstMidWeek+1) - weekdayOfMarathon));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsAfterMarathon];
-                         }
                          
-                         
-                         
+                         //post to calendar
                          for (thisRun in midWeekRun1)
                          {
                              EKEvent *event  = [EKEvent eventWithEventStore: eventstore];
@@ -332,45 +346,13 @@
                              firstDay = newDate;
                          }
                          
-                         
+                         //rinse repeat. I need to make these into functions somewhere.
                          int secondMidWeek = 0;
                          
-                         if(_midWeekSundayClickedBool){
-                             secondMidWeek = 0;
-                             _midWeekSundayClickedBool = false;
-                         }else if (_midWeekMondayClickedBool){
-                             secondMidWeek = 1;
-                             _midWeekMondayClickedBool = false;
-                         }else if (_midWeekTuesdayClickedBool){
-                             secondMidWeek = 2;
-                             _midWeekTuesdayClickedBool = false;
-                         }else if (_midWeekWednesdayClickedBool){
-                             secondMidWeek = 3;
-                             _midWeekWednesdayClickedBool = false;
-                         }else if (_midWeekThursdayClickedBool){
-                             secondMidWeek = 4;
-                             _midWeekThursdayClickedBool = false;
-                         }else if (_midWeekFridayClickedBool){
-                             secondMidWeek = 5;
-                             _midWeekFridayClickedBool = false;
-                         }else if (_midWeekSaturdayClickedBool){
-                             secondMidWeek = 6;
-                             _midWeekSaturdayClickedBool = false;
-                         }
+                         secondMidWeek = [self nextDatePickedByButtons];
+                         firstDay = [self findFirstDayFromMarathon:secondMidWeek];
                          
                          i = 0;
-                         NSLog(@"%d", secondMidWeek);
-                         if(weekdayOfMarathon == secondMidWeek+1){
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsPerWeek];
-                         }else if (weekdayOfMarathon > secondMidWeek+1){
-                             NSTimeInterval secondsBeforeMarathon = (secondsPerDay * (weekdayOfMarathon-(secondMidWeek+1)));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsBeforeMarathon];
-                         }else{
-                             NSTimeInterval secondsAfterMarathon = secondsPerWeek - (secondsPerDay * ((secondMidWeek+1) - weekdayOfMarathon));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsAfterMarathon];
-                         }
-                         
-                         
                          
                          for (thisRun in midWeekRun2)
                          {
@@ -395,42 +377,10 @@
                          
                          int thirdMidWeek = 0;
                          
-                         if(_midWeekSundayClickedBool){
-                             thirdMidWeek = 0;
-                             _midWeekSundayClickedBool = false;
-                         }else if (_midWeekMondayClickedBool){
-                             thirdMidWeek = 1;
-                             _midWeekMondayClickedBool = false;
-                         }else if (_midWeekTuesdayClickedBool){
-                             thirdMidWeek = 2;
-                             _midWeekTuesdayClickedBool = false;
-                         }else if (_midWeekWednesdayClickedBool){
-                             thirdMidWeek = 3;
-                             _midWeekWednesdayClickedBool = false;
-                         }else if (_midWeekThursdayClickedBool){
-                             thirdMidWeek = 4;
-                             _midWeekThursdayClickedBool = false;
-                         }else if (_midWeekFridayClickedBool){
-                             thirdMidWeek = 5;
-                             _midWeekFridayClickedBool = false;
-                         }else if (_midWeekSaturdayClickedBool){
-                             thirdMidWeek = 6;
-                             _midWeekSaturdayClickedBool = false;
-                         }
+                         thirdMidWeek = [self nextDatePickedByButtons];
+                         firstDay = [self findFirstDayFromMarathon:thirdMidWeek];
                          
                          i = 0;
-                         NSLog(@"%d", thirdMidWeek);
-                         if(weekdayOfMarathon == thirdMidWeek+1){
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsPerWeek];
-                         }else if (weekdayOfMarathon > thirdMidWeek+1){
-                             NSTimeInterval secondsBeforeMarathon = (secondsPerDay * (weekdayOfMarathon-(thirdMidWeek+1)));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsBeforeMarathon];
-                         }else{
-                             NSTimeInterval secondsAfterMarathon = secondsPerWeek - (secondsPerDay * ((thirdMidWeek+1) - weekdayOfMarathon));
-                             firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsAfterMarathon];
-                         }
-                         
-                         
                          
                          for (thisRun in midWeekRun3)
                          {
@@ -456,42 +406,10 @@
                          if(_levelAccepted == [NSNumber numberWithInt: 3]){
                              int fourthMidWeek = 0;
                              
-                             if(_midWeekSundayClickedBool){
-                                 fourthMidWeek = 0;
-                                 _midWeekSundayClickedBool = false;
-                             }else if (_midWeekMondayClickedBool){
-                                 fourthMidWeek = 1;
-                                 _midWeekMondayClickedBool = false;
-                             }else if (_midWeekTuesdayClickedBool){
-                                 fourthMidWeek = 2;
-                                 _midWeekTuesdayClickedBool = false;
-                             }else if (_midWeekWednesdayClickedBool){
-                                 fourthMidWeek = 3;
-                                 _midWeekWednesdayClickedBool = false;
-                             }else if (_midWeekThursdayClickedBool){
-                                 fourthMidWeek = 4;
-                                 _midWeekThursdayClickedBool = false;
-                             }else if (_midWeekFridayClickedBool){
-                                 fourthMidWeek = 5;
-                                 _midWeekFridayClickedBool = false;
-                             }else if (_midWeekSaturdayClickedBool){
-                                 fourthMidWeek = 6;
-                                 _midWeekSaturdayClickedBool = false;
-                             }
+                             fourthMidWeek = [self nextDatePickedByButtons];
+                             firstDay = [self findFirstDayFromMarathon:fourthMidWeek];
                              
                              i = 0;
-                             NSLog(@"%d", fourthMidWeek);
-                             if(weekdayOfMarathon == fourthMidWeek+1){
-                                 firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsPerWeek];
-                             }else if (weekdayOfMarathon > fourthMidWeek+1){
-                                 NSTimeInterval secondsBeforeMarathon = (secondsPerDay * (weekdayOfMarathon-(fourthMidWeek+1)));
-                                 firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsBeforeMarathon];
-                             }else{
-                                 NSTimeInterval secondsAfterMarathon = secondsPerWeek - (secondsPerDay * ((fourthMidWeek+1) - weekdayOfMarathon));
-                                 firstDay = [_datePicker.date dateByAddingTimeInterval:-secondsAfterMarathon];
-                             }
-                             
-                             
                              
                              for (thisRun in midWeekRun4Advanced)
                              {
@@ -551,6 +469,7 @@
     }
     
 }
+
 
 
 

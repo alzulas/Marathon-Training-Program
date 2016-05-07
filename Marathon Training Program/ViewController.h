@@ -32,6 +32,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *midWeekSaturdayClicked;
 
 @property (strong, nonatomic) NSNumber* levelAccepted;
+@property (strong, nonatomic) IBOutlet UILabel *midweekLabel;
+-(int)nextDatePickedByButtons;
+-(NSDate*)findFirstDayFromMarathon: (long) weekdayOfSegment;
+
 
 @end
 
