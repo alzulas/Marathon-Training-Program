@@ -281,7 +281,7 @@
                              i++;
                              
                              //tomorrow = [today dateByAddingTimeInterval: secondsPerDay]
-                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek];
+                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek-60];
                              //[firstDay release];
                              firstDay = newDate;
                          }
@@ -310,7 +310,7 @@
                              i++;
                              
                              //tomorrow = [today dateByAddingTimeInterval: secondsPerDay]
-                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek];
+                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek-60];
                              //[firstDay release];
                              firstDay = newDate;
                          }
@@ -341,7 +341,7 @@
                              i++;
                              
                              //tomorrow = [today dateByAddingTimeInterval: secondsPerDay]
-                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek];
+                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek-60];
                              //[firstDay release];
                              firstDay = newDate;
                          }
@@ -370,7 +370,7 @@
                              i++;
                              
                              //tomorrow = [today dateByAddingTimeInterval: secondsPerDay]
-                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek];
+                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek-60];
                              //[firstDay release];
                              firstDay = newDate;
                          }
@@ -398,7 +398,7 @@
                              i++;
                              
                              //tomorrow = [today dateByAddingTimeInterval: secondsPerDay]
-                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek];
+                             NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek-60];
                              //[firstDay release];
                              firstDay = newDate;
                          }
@@ -427,12 +427,21 @@
                                  i++;
                                  
                                  //tomorrow = [today dateByAddingTimeInterval: secondsPerDay]
-                                 NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek];
+                                 NSDate* newDate = [firstDay dateByAddingTimeInterval:-secondsPerWeek-60];
                                  //[firstDay release];
                                  firstDay = newDate;
                              }
 
                          }
+                         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success!"
+                                                                                        message:@"Dates have been successfully posted to your calendar. Enjoy your workouts!"
+                                                                                 preferredStyle:UIAlertControllerStyleAlert];
+                         
+                         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                               handler:^(UIAlertAction * action) {}];
+                         
+                         [alert addAction:defaultAction];
+                         [self presentViewController:alert animated:YES completion:nil];
                          
                      }else{
                          UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Two or more selected days overlap"
